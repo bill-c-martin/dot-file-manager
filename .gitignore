@@ -1,4 +1,5 @@
 .ssh
+.bash_rc
 .bash_history
 .bash_logout
 .aws
@@ -6,3 +7,4 @@
 .viminfo
 .motd_shown
 .landscape
+.nvm
