@@ -1,5 +1,5 @@
 .ssh
-.bash_rc
+.bashrc
 .bash_history
 .bash_logout
 .aws
