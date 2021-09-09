@@ -1,0 +1,22 @@
+[alias]
+	lg = log --graph --pretty=format:'%C(auto)%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
+	lgs = log --graph --pretty=format:'%C(auto)%h%Creset -%C(auto)%d%Creset %s' --abbrev-commit --date=relative --all
+	lgc = log --graph --pretty=format:'%C(auto)%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[user]
+	email = bill@billmartin.io
+	name = Bill Martin
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
+	pager = true
+[core]
+	editor = vim
+	excludesfile = /home/bill/.gitignore
+	filemode = false
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE

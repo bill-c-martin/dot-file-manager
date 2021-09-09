@@ -1,0 +1,17 @@
+alias aws-switch-profile-mine="export AWS_PROFILE=default"
+alias aws-switch-profile-gw="export AWS_PROFILE=gw"
+alias aws-aliases="cat ~/.bash_aliases_aws"
+alias aws-config="aws configure"
+alias aws-test="aws --version"
+alias aws-show-keys="cat ~/.aws/credentials"
+alias aws-s3-ls="aws s3 ls"
+alias aws-s3-mb="aws s3 mb s3://bucketname" #make bucket
+alias aws-s3-cp="aws s3 cp /local/path/to/file s3://bucketname"
+alias aws-delete-bucket="aws s3api delete-bucket --bucket " #bucket-name without s3://
+alias aws-ec2-ssh="ssh -i ~/.aws/ssh/ec2/ec2-test-instance-personal.pem" #ec2-user@instance-IP here
+alias aws-ec2-ssh-test-instance="ssh -i ~/.aws/ssh/ec2/ec2-test-instance-personal.pem ec2-user@ec2-34-205-62-196.compute-1.amazonaws.com"
+alias aws-ec2-launch-test-instance="aws ec2 run-instances --image-id ami-01afa48c196ed29cf --count 1 --instance-type t2.micro --key-name ec2-test-instance-personal --security-group-ids sg-0690255f84a68cf0a --subnet-id subnet-2fbd5e0e --tag-specifications 'ResourceType=instance,Tags=[{Key=webserver,Value=test}]' 'ResourceType=volume,Tags=[{Key=cost-center,Value=cc123}]'"
+alias aws-ec2-stop-instance="aws ec2 stop-instances --instance-ids " #instance-id
+alias aws-ec2-show-instances-verbose="aws ec2 describe-instance-status --include-all-instances | jq"
+alias aws-ec2-show-instances="aws ec2 describe-instance-status --include-all-instances | jq -r '.InstanceStatuses | .[] | \"\\(.InstanceId)\\t\\(.InstanceState.Name)\"'"
+alias=aws-website="aws s3 website s3://NAME-OF-BUCKET/ --index-document index.html --error-document error.html"
