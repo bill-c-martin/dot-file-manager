@@ -8,3 +8,11 @@
 .motd_shown
 .landscape
 .nvm
+gems/
+projects/
+.cache/
+.config/
+.gem/
+.npm/
+.vscode-server/
+.wget-hsts
