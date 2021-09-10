@@ -19,3 +19,6 @@ else
    PS1='${debian_chroot:+($debian_chroot)}\u@local:\w$(parse_git_branch)\$ '
 fi
 unset color_prompt force_color_prompt
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
