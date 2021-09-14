@@ -16,3 +16,6 @@ projects/
 .npm/
 .vscode-server/
 .wget-hsts
+.vscode/
+.bundle/
+.vim/
