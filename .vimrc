@@ -8,3 +8,6 @@ hi Search ctermfg=Red
 
 " Show matching brackets when text indicator is over them
 set showmatch 
+
+" Tabs create 4 spaces
+set tabstop=4 shiftwidth=4 expandtab
