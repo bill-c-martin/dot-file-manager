@@ -1,3 +1,21 @@
+# Ignore everything
+*
+
+# But not these files
+!.gitignore
+!README.md
+
+# And not dot files
+!.*
+
+# Even if they are in subdirectories
+# !*/
+
+# if the files to be tracked are in subdirectories
+!*/a/b/file1.txt
+!*/a/b/c/*
+
+# But do still ignore these dot files:
 .ssh
 .bashrc
 .bash_history
@@ -8,8 +26,6 @@
 .motd_shown
 .landscape
 .nvm
-gems/
-projects/
 .cache/
 .config/
 .gem/
@@ -19,3 +35,7 @@ projects/
 .vscode/
 .bundle/
 .vim/
+.boto
+.lesshst
+.python_history
+.test
