@@ -1,12 +1,12 @@
 # Ignore everything
-*
+/*
 
 # But not these files
-!.gitignore
-!README.md
+!/.gitignore
+!/README.md
 
 # And not dot files
-!.*
+!/.*
 
 # Even if they are in subdirectories
 # !*/
@@ -39,3 +39,5 @@
 .lesshst
 .python_history
 .test
+.ipython/
+.vscode-server-server/
