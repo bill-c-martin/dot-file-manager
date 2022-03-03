@@ -40,3 +40,7 @@
 .test
 .ipython/
 .vscode-server-server/
+.bash_profile
+.gnome
+.local
+.pki
