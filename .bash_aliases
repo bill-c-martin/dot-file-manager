@@ -105,6 +105,7 @@
 	alias rbrc=". ~/.bashrc" # refresh bash configs
 	alias a="cat ~/.bash_aliases" # print aliases, pipe with: a | grep <text-to-search-in-a-command>
 	alias servers="cat ~/.ssh/config | grep 'Host '"
+    alias vi="vim"
 
 # Network
 	alias print-all-processes-listening-to-ports="sudo ss -tulpn"
