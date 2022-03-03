@@ -17,7 +17,6 @@
 
 # But do still ignore these dot files:
 .ssh
-.bashrc
 .bash_history
 .bash_logout
 .aws
