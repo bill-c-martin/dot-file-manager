@@ -1,0 +1,51 @@
+# logs and status
+alias gl="git lg" 
+alias glf="git lg -p " # append file name to see detailed commit history on file. Or $ tig [filename] for interactive text version. (Install tig)
+alias glc="git lgc" # view log current branch
+alias gls="git lgs" # view git log, shortened version
+alias gs="git status"
+alias gss="git submodule status"
+
+# branches
+alias gb="git branch"
+alias gc="git checkout"
+
+# add and committing
+alias gac="git add . && git commit -m "
+alias ga="git add "
+alias gcm="git commit -m "
+
+# push/pulls
+alias gf="git fetch --all"
+alias gp="git pull"
+alias gpo="git push origin "
+
+# submodules
+alias gpr-first-time="git submodule update --init --recursive"	
+alias gpr="git pull && git submodule update --remote --recursive"
+# alias gpr="git pull --recurse-submodules"
+
+# diffs
+alias gd="git diff"
+alias gdf="git diff --name-only"
+function gdg { git diff --color "$1" | grep --color=never $'^\e\[32m'; } # git diff that shows only the green additions
+function gdr { git diff --color "$1" | grep --color=never $'^\e\[31m'; } # git diff that shows only the red deletions
+alias gdp="git diff HEAD~1 HEAD"
+alias gdpf="git diff --name-only HEAD~1 HEAD"
+
+# tags
+alias gtl="git tag -n9" # List all tags, including 9 lines of tag messages
+alias gtd="git tag -d " # delete tag locally, add tag name after this command
+alias gtdr="git push origin :refs/tags/" # Delete remote tag, add tag name after this command
+alias gtp="git push --tags" # push all tags
+
+# Git branch cleanup
+# delete local/remote branches
+alias gdbl="git branch -d " #append brand name
+alias gdbr="git push origin --delete " # append branch name
+
+# Clean up master-merged branches local/remote
+alias gcl-check="git branch --merged master | egrep -v '(^\*|master|dev-master|dev-stage|dev-leap|staging|Staging|production)' | sed 's/origin\///'"
+alias gcl="git branch --merged master | egrep -v '(^\*|master|dev-master|dev-stage|dev-leap|staging|Staging|production)' | sed 's/origin\///' | xargs -n 1 git branch -d"
+alias gcr-check="git branch -r --merged master | egrep -v '(^\*|master|dev-master|dev-stage|dev-leap|staging|Staging|production)' | sed 's/origin\///'"
+alias gcr="git branch -r --merged master | egrep -v '(^\*|master|dev-master|dev-stage|dev-leap|staging|Staging|production)' | sed 's/origin\///' | xargs -n 1 git push --delete origin"

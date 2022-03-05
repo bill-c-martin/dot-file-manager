@@ -1,0 +1,32 @@
+alias clear-magento-var-cd='sudo rm -rf generated var/di/* var/generation/* var/cache/* var/log/*.gz var/page_cache/* var/session/* var/view_preprocessed/* pub/static/*'
+alias clear-cache-cd-dev='sudo -u www-data find . -type f -delete'
+alias clear-cache-cd='sudo -u nginx find . -type f -delete'
+
+	# Amazon Linux	
+	alias show-amazon-linux-topic="sudo amazon-linux-extras list"
+	alias enable-amazon-linux-topic="sudo amazon-linux-extras enable " # append package name 
+	alias disable-amazon-linux-topic="sudo amazon-linux-extras disable " # append package name 
+	alias yum-list-installed="yum list installed"
+	alias yum-list-available="yum list available"
+	alias yum-install-package="yum install " # append package name
+	alias yum-update-package="yum update " # append package name
+
+# Source Code	
+	alias cdhb="cd ~/source/hempbombs-clean/"
+	alias cdns="cd ~/source/naturesscript.com/"
+	alias cdpp="cd ~/source/perfectpawshemp.com/"
+	alias cdm="cd ~/source/gwcbd.com/"
+	alias cdmcc="cd ~/source/magento-cloud/"
+
+# MCC Docker
+	alias mcc-ssh='docker exec -it magento-cloud_fpm_1 bash'
+	alias mcc-bash='docker-compose exec fpm '
+	alias mcc-bin-magento='docker-compose exec fpm bin/magento '
+	alias mcc-docker-clear='mcc-bin-magento cache:clean && mcc-bash clear-magento-var-cd' 
+	alias mcc-bash2='docker exec magento-cloud_fpm_1 bash -c '
+	alias mcc-redis='docker exec -it magento-cloud_redis_1 redis-cli '
+	alias mcc-redis-flush='docker exec -it magento-cloud_redis_1 redis-cli FLUSHALL'
+	alias mcc-redis-stat='docker exec -it magento-cloud_redis_1 redis-cli --stat'
+	alias mcc-redis-bigkeys='docker exec -it magento-cloud_redis_1 redis-cli --bigkeys'
+	alias mcc-redis-latency='docker exec -it magento-cloud_redis_1 redis-cli --latency'
+	alias mcc-redeploy='mcc-docker-clear && docker-compose exec fpm bin/magento setup:upgrade && docker-compose exec fpm bin/magento setup:di:compile && docker-compose exec fpm bin/magento setup:static-content:deploy -f'

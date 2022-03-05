@@ -1,0 +1,9 @@
+# Docker
+    # function dcu { docker-compose -f $(pwd | cut -d/ -f 1-5)/.docker/docker-compose.yml up -d; }
+    # function dcd { docker-compose -f $(pwd | cut -d/ -f 1-5)/.docker/docker-compose.yml down; }
+    alias dcu="docker-compose up -d"
+    alias dcd="docker-compose down"
+    alias dcl="docker container list"
+    alias dcla="docker container list -a"
+    alias dspa="docker system prune -a" # destroys docker containers
+    alias dssh="docker exec -it $(dcl | grep nginx | awk -F '[[:space:]][[:space:]]+' '{ print $7 }') /bin/bash"

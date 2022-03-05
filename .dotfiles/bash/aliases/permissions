@@ -1,0 +1,5 @@
+alias show-permissions='stat -c %a ' ## add file/dir
+alias fix-ssh-permissions='chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/authorized_keys && chmod 644 ~/.ssh/id_rsa.pub && chmod 644 ~/.ssh/id_ed25519.pub && chmod 600 ~/.ssh/config'
+alias fix-git-permissions-to-nginx='sudo chown -R nginx:nginx .git/*'
+alias fix-wp-permissions-to-www-data-in-current-dir='sudo chown www-data:www-data -R . ; sudo chmod ug+rw -R . '
+alias fix-wp-permissions-to-nginx-in-current-dir='sudo chown nginx:nginx -R . ; sudo chmod ug+rw -R . ' 

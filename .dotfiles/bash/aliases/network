@@ -1,0 +1,11 @@
+# Network
+	alias print-all-processes-listening-to-ports="sudo ss -tulpn"
+	function print-pid-listening-to { sudo ss -tulpn | grep :$1; } # usage: print-pid-listening-to 80
+	function print-process-listening-to { sudo ss -tulpn | grep ":$1" | cut -d',' -f 2 | cut -d'=' -f 2 | head -n 1 | xargs -I {} sudo ls -l /proc/{}/exe;  } # usage: print-process-listening-to 80
+
+# DNS
+	alias dig-txt="dig +short txt " # append brand.com
+	alias dig-a="dig +short txt " # append brand.com
+	alias dig-aaaa="dig +short txt " # append brand.com
+	alias dig-mx="dig +short mx " # append brand.com
+	alias dig-ns="dig +short ns " # append brand.com

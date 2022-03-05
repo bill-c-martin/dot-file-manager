@@ -1,0 +1,15 @@
+function a() { 
+    local alias_file="$1"
+    local alias_path="$HOME/.dotfiles/bash/aliases"
+    
+    if [[ -e "$alias_path"/"$alias_file" && -n "$alias_file" ]]
+    then
+        printf "\nAliases in ${alias_path}/${alias_file}:\n\n"
+        batcat -l bash "$alias_path"/"$alias_file"
+    else
+        printf "\nUsage: a <alias-group>\n\n"
+        printf "Where <alias-group> is one of: \n\n"
+        ls -1 $alias_path
+        printf "\nAlias groups defined in ~/.dotfiles/bash/aliases/\n\n"
+    fi
+}

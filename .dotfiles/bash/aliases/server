@@ -1,0 +1,2 @@
+alias rsync-from-remote-to-local='rsync -avzh #user@server:/from/path/on/remote /to/path/to/local'
+alias nginx-reload='sudo nginx -s reload'
