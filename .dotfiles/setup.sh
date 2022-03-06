@@ -12,11 +12,14 @@ for FILE in .[^.]*; do
         read -p "Overwrite ~/${FILE}? y/n: " yn
 
         if [[ $yn == "y" ]]; then
-            rm ~/.bashrc && ln -s ~/.dotfiles/.bashrc ~/.bashrc
+            rm ~/$FILE && ln -s ~/.dotfiles/$FILE ~/$FILE
             printf "Symlinked: ~/${FILE} -> ~/.dotfiles/${FILE}\n"
         else
             printf "\nSkipping file..\n"
         fi
+    else
+        ln -s ~/.dotfiles/$FILE ~/$FILE
+        printf "Symlinked: ~/${FILE} -> ~/.dotfiles/${FILE}\n"
     fi
 done
 
