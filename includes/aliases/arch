@@ -1,2 +1,2 @@
-arch-failed-services='systemctl --failed'
-arch-errors='journalctl -p 3 -b'
+alias arch-failed-services='systemctl --failed'
+alias arch-errors='journalctl -p 3 -b'
