@@ -1,6 +1,6 @@
 # dot-files
 
-Track and manage Linux dot-files and aliases across computers:
+Track and manage Linux dot-files, symlinks, and aliases across machines.
 
 Features:
 
