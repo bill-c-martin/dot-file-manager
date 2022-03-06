@@ -113,7 +113,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-    # Load .bashrc customizations and aliases
-    if [ -f ~/.dotfiles/bashrc-includes/include ]; then
-        . ~/.dotfiles/bashrc-includes/include
-    fi
+# Load .bashrc customizations and aliases
+if [ -f ~/dot-files/includes/include ]; then
+   . ~/dot-files/includes/include
+fi
+

@@ -1,2 +1,0 @@
-alias backup-kb-settings="dconf dump / > ~/.dotfiles/gnome-keyboard-settings.conf"
-alias restore-kb-settings="dconf load / < ~/.dotfiles/gnome-keyboard-settings.conf"

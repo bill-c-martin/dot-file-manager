@@ -3,10 +3,10 @@
 #
 
 # Include additional .bashrc customizations 
-source ~/.dotfiles/bashrc-includes/config/bashrc-addons
+source ~/dot-files/includes/config/bashrc-addons
 
 # Include aliases
-for file in ~/.dotfiles/bashrc-includes/aliases/*; do
+for file in ~/dot-files/includes/aliases/*; do
   [[ -r "$file" ]] && [[ -f "$file" ]] && source "$file"
 done
 
