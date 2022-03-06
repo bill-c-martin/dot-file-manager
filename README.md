@@ -1,25 +1,20 @@
 ## Setup
 
-Init a repo in `~`, and pull in dot files, which will merge with any pre-existing files already in `~`:
-
 ```bash
 cd ~
-git init .
-git remote add -t \* -f origin git@github.com:bill-c-martin/dot-files.git
-git checkout main
-git pull
+git clone git@github.com:bill-c-martin/dot-files.git
+chmod +x dot-files/setup.sh
+./dot-files/setup.sh
 ```
+The setup script ask if it can point your `~` dot files to the versions in this repo:
 
-Add this to `~/.bashrc`:
+- `.gitconfig`
+- `.vimrc`
+- `.bashrc`
 
-```bash
-# Load custom bash settings and aliases
-if [ -f ~/.dotfiles/bash/.init ]; then
-    . ~/.dotfiles/bash/.init
-fi
-```
+And will offer to append an include in `~/.bashrc` for this repo's aliases.
 
-Refresh bash:
+Then, refresh bash:
 
 ```bash
 . ~/.bashrc
