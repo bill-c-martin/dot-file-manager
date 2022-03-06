@@ -1,0 +1,6 @@
+alias pacman-install='sudo pacman -Syu'   # append package name
+alias pacman-uninstall='sudo pacman -Rsc' # append package name
+alias pacman-search='pacman -Ss'          # append package name
+alias pacman-info='pacman -Si'            # append package name
+alias pacman-upgrade='sudo pacman -Syu'
+alias pacman-clean-cache='pacman -Sc'
