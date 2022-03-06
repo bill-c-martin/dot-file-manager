@@ -1,0 +1,2 @@
+alias backup-kb-settings="dconf dump / > ~/.config/dconf/user.conf"
+alias restore-kb-settings="dconf load / < ~/.config/dconf/user.conf"

@@ -34,3 +34,4 @@ else
 fi
 alias cat='bat'
 
+alias l='ls -alhF --time-style="+%F %r"'
