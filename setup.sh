@@ -21,7 +21,7 @@ for FILE in .[^.]*; do
 
         if [[ $yn == "y" ]]; then
             rm ~/$FILE && ln -s ~/dot-files/$FILE ~/$FILE
-            printf "Symlinked: ~/${FILE} -> ~.dot-files/${FILE}\n"
+            printf "Symlinked: ~/${FILE} -> ~/dot-files/${FILE}\n"
         else
             printf "\nSkipping file..\n"
         fi

@@ -40,6 +40,8 @@ sudo apt install bat
 
 ## Usage
 
+### Alias Usage
+
 Aliases are grouped in files under `~/.dotfiles/bash/aliases/*`.
 
 Print alias groups:
@@ -110,4 +112,50 @@ Aliases in /home/bill/dot-files/includes/aliases/pacman:
   17   │ 
   18   │ # Cache
   19   │ alias pacman-clean-cache='pacman -Sc'
+```
+
+## Dot File Usage
+
+To track a new dot file, add it to the root of this repo, then run `setup.sh` which will symlink your dot file from `~/` to the one in this repo.
+
+### Example: Move `.gitconfig` to be Tracked in This Repo
+
+```bash
+cp ~/.vimrc ~/dot-files/.gitconfig
+cd ~ && ./dot-files/setup.sh
+```
+
+Output:
+
+```bash
+# Setting up dot file symlinks..
+
+Symlinked: ~/.gitconfig -> ~/dot-files/.gitconfig
+
+# Next Steps: 
+
+- Refresh bash: . ~/.bashrc
+- View aliases: a
+```
+
+### Example: Track a Brand New `.vimrc` File in This Repo
+
+Where `~/.vimrc` does not yet exist.
+
+```bash
+echo "set tabstop=4 shiftwidth=4 expandtab" > ~/dot-files/.vimrc
+cd ~ && ./dot-files/setup.sh
+```
+
+Output:
+
+```bash
+# Setting up dot file symlinks..
+
+Symlinked: ~/.vimrc -> ~/dot-files/.vimrc
+
+# Next Steps: 
+
+- Refresh bash: . ~/.bashrc
+- View aliases: a
 ```
