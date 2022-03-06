@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# cd into current directory in case script is run from another directory
+cd $(dirname $0)
+
 # Symlink these dot files to the ones in this repo 
 printf "# Setting up dot file symlinks..\n"
 
