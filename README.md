@@ -12,7 +12,9 @@ Features:
 Ships with:
 
 - Sample `.gitconfig`, `.vimrc`, and `.bashrc` files.
+  - You can add more to the repo's root.
 - Bunch of sample aws, pacman, arch, disk, file, git, network, server, etc aliases
+  - You can add more to the aliases folder in their own files
 
 ## Setup
 
