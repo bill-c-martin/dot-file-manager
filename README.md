@@ -1,6 +1,6 @@
 # dot-files
 
-Track and manage Linux dot-files and aliases across computers.
+Track and manage Linux dot-files and aliases across computers:
 
 Features:
 
@@ -8,6 +8,11 @@ Features:
 - List these aliases using the `a` pretty-print command
 - Customize `~./bashrc` by adding to `config/bashrc-addons` file
 - Setup dot file symlinks from your `~` into this repo using `setup.sh`
+
+Ships with:
+
+- Sample `.gitconfig`, `.vimrc`, and `.bashrc` files.
+- Bunch of sample aws, pacman, arch, disk, file, git, network, server, etc aliases
 
 ## Setup
 
@@ -18,21 +23,21 @@ chmod +x dot-files/setup.sh
 ./dot-files/setup.sh
 ```
 
-The setup script ask if it can point your `~` dot files to the versions in this repo:
+The setup script asks if it can point your `~` dot files to the versions in this repo (or any other files you add to this repo starting with a `.`):
 
 - `.gitconfig`
 - `.vimrc`
 - `.bashrc`
 
-And will offer to append an include in `~/.bashrc` for this repo's aliases.
+The setup script also will offer to append an include in `~/.bashrc` for this repo's aliases and `.bashrc` customizations.
 
-Then, refresh bash:
+From there, refresh bash:
 
 ```bash
 . ~/.bashrc
 ```
 
-Install `bat`:
+Install `bat` for pretty-printing:
 
 ```bash
 sudo apt install bat
