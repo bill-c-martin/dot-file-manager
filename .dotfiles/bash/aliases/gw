@@ -19,6 +19,7 @@ alias clear-cache-cd='sudo -u nginx find . -type f -delete'
 	alias cdmcc="cd ~/source/magento-cloud/"
 
 # MCC Docker
+if command -v docker > /dev/null 2>&1; then
 	alias mcc-ssh='docker exec -it magento-cloud_fpm_1 bash'
 	alias mcc-bash='docker-compose exec fpm '
 	alias mcc-bin-magento='docker-compose exec fpm bin/magento '
@@ -30,3 +31,6 @@ alias clear-cache-cd='sudo -u nginx find . -type f -delete'
 	alias mcc-redis-bigkeys='docker exec -it magento-cloud_redis_1 redis-cli --bigkeys'
 	alias mcc-redis-latency='docker exec -it magento-cloud_redis_1 redis-cli --latency'
 	alias mcc-redeploy='mcc-docker-clear && docker-compose exec fpm bin/magento setup:upgrade && docker-compose exec fpm bin/magento setup:di:compile && docker-compose exec fpm bin/magento setup:static-content:deploy -f'
+else
+    echo "Install package: docker"
+fi

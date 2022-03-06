@@ -1,9 +1,4 @@
 
-# cat substitue with syntax highlighting and line numbers
-# pass -l <lang> to specify language if file type lacks
-alias bat='batcat'
-alias cat='batcat'
-
 alias ls-by-size='ls --human-readable --size -1 -S --classify' #sort by filesize
 alias left='ls -t -1' # most recently modified files
 alias count='find . -type f | wc -l' # count files
@@ -25,3 +20,17 @@ function decrypt() {
 }
 alias decrypt-1password='decrypt ~/1password/1password.enc ~/1password/1password.dec'
 alias encrypt-1password='encrypt ~/1password/1password.dec ~/1password/1password.enc'
+
+# bat is a cat substitue with syntax highlighting and line numbers
+# Ubuntu annoyingly installs it as "batcat"
+# pass -l <lang> to specify language if need be
+if command -v bat > /dev/null 2>&1; then
+    alias cat='bat'
+elif command -v batcat > /dev/null 2>&1; then
+   # alias bat='batcat'
+    alias cat='bat'
+else
+    echo "Install package: bat"
+fi
+alias cat='bat'
+

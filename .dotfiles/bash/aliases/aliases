@@ -5,7 +5,7 @@ function a() {
     if [[ -e "$alias_path"/"$alias_file" && -n "$alias_file" ]]
     then
         printf "\nAliases in ${alias_path}/${alias_file}:\n\n"
-        batcat -l bash "$alias_path"/"$alias_file"
+        bat -l bash "$alias_path"/"$alias_file"
     else
         printf "\nUsage: a <alias-group>\n\n"
         printf "Where <alias-group> is one of: \n\n"
