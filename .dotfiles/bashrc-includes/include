@@ -1,0 +1,13 @@
+#
+# Running setup.sh will include this file in your ~/.bashrc
+#
+
+# Include additional .bashrc customizations 
+source ~/.dotfiles/bashrc-includes/config/bashrc-addons
+
+# Include aliases
+for file in ~/.dotfiles/bashrc-includes/aliases/*; do
+  [[ -r "$file" ]] && [[ -f "$file" ]] && source "$file"
+done
+
+unset file
