@@ -2,23 +2,7 @@ alias clear-magento-var-cd='sudo rm -rf generated var/di/* var/generation/* var/
 alias clear-cache-cd-dev='sudo -u www-data find . -type f -delete'
 alias clear-cache-cd='sudo -u nginx find . -type f -delete'
 
-	# Amazon Linux	
-	alias show-amazon-linux-topic="sudo amazon-linux-extras list"
-	alias enable-amazon-linux-topic="sudo amazon-linux-extras enable " # append package name 
-	alias disable-amazon-linux-topic="sudo amazon-linux-extras disable " # append package name 
-	alias yum-list-installed="yum list installed"
-	alias yum-list-available="yum list available"
-	alias yum-install-package="yum install " # append package name
-	alias yum-update-package="yum update " # append package name
-
-# Source Code	
-	alias cdhb="cd ~/source/hempbombs-clean/"
-	alias cdns="cd ~/source/naturesscript.com/"
-	alias cdpp="cd ~/source/perfectpawshemp.com/"
-	alias cdm="cd ~/source/gwcbd.com/"
-	alias cdmcc="cd ~/source/magento-cloud/"
-
-# MCC Docker
+# Magent Commerce Cloud Docker
 if command -v docker > /dev/null 2>&1; then
 	alias mcc-ssh='docker exec -it magento-cloud_fpm_1 bash'
 	alias mcc-bash='docker-compose exec fpm '
