@@ -4,12 +4,13 @@ alias pacman-uninstall='sudo pacman -Rsc' # append package name
 
 # What do I have?
 alias pacman-installed='pacman -Q'
+alias pacman-installed-aur='pacman -Qm'
 alias pacman-installed-info='pacman -Qi'  # append package name
 alias pacman-orphaned='pacman -Qdt'
 
 # Finding packages
 alias pacman-search='pacman -Ss'          # append package name
-alias pacman-search-info='pacman -Si'            # append package name
+alias pacman-search-info='pacman -Si'     # append package name
 
 # Update/upgrade
 alias pacman-update='sudo pacman -Syy'
