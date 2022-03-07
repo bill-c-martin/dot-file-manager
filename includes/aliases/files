@@ -27,7 +27,7 @@ alias encrypt-1password='encrypt ~/1password/1password.dec ~/1password/1password
 if command -v bat > /dev/null 2>&1; then
     alias cat='bat'
 elif command -v batcat > /dev/null 2>&1; then
-   # alias bat='batcat'
+    alias bat='batcat'
     alias cat='bat'
 else
     echo "Install package: bat"
