@@ -1,1 +1,1 @@
-alias js='bundle exec jekyll serve'
+alias js='bundle-2.7 exec jekyll serve'
