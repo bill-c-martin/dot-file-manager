@@ -3,6 +3,7 @@ alias ls-by-size='ls --human-readable --size -1 -S --classify' #sort by filesize
 alias left='ls -t -1' # most recently modified files
 alias count='find . -type f | wc -l' # count files
 alias count-files-by-subdir='du -a | cut -d/ -f2 | sort | uniq -c | sort -nr'
+alias count-words-per-file='wc -w *'
 alias trash='mv --force -t ~/.local/share/Trash ' # use instead of rm to prevent accidents
 alias list-symlinks='ls -lR . | grep ^l' # lists recursively for current dir 
 function list-symlinks-efs { find -L /var/www/ /etc -xtype l -exec ls -l {} \; 2>/dev/null | awk -e '$11 ~ /^\/mnt\/efs\// {print $9 $10 $11}'; }  # list all nfs symlinks
