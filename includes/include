@@ -10,4 +10,7 @@ for file in ~/dot-files/includes/aliases/*; do
   [[ -r "$file" ]] && [[ -f "$file" ]] && source "$file"
 done
 
+# Include alias browser last, because it has dependency on bat/batcat in files alias file
+[[ -r alias-browser ]] && [[ -f alias-browser ]] && source alias-browser
+
 unset file
