@@ -104,17 +104,25 @@ if ! shopt -oq posix; then
     . /usr/share/bash-completion/bash_completion
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
+  else
+    echo "Install package: bash_completion"
   fi
 fi
-
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
 # Load .bashrc customizations and aliases
 if [ -f ~/dot-files/includes/include ]; then
    . ~/dot-files/includes/include
+
+   # Add bash completion for aliases
+   if [ -f /usr/share/bash-complete-alias/complete_alias ]; then
+      . /usr/share/bash-complete-alias/complete_alias
+      complete -F _complete_alias "${!BASH_ALIASES[@]}"
+   else
+      echo "Install package: bash-complete-alias"
+   fi
 fi
 
