@@ -13,9 +13,9 @@ alias pacman-search='pacman -Ss'          # append package name
 alias pacman-search-info='pacman -Si'     # append package name
 
 # Update/upgrade
-alias pacman-update='sudo pacman -Syy'
-alias pacman-upgrade='sudo pacman -Syu'
+alias pacman-update='sudo pacman -Syy'    # add --debug for issues
+alias pacman-upgrade='sudo pacman -Syu'   # add --debug for issues
 
 # Cache
-alias pacman-clean-cache='pacman -Sc'
+alias pacman-clean-cache='sudo pacman -Sc'
 
