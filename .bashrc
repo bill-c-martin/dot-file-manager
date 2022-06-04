@@ -121,8 +121,11 @@ if [ -f ~/dot-files/includes/include ]; then
    if [ -f /usr/share/bash-complete-alias/complete_alias ]; then
       . /usr/share/bash-complete-alias/complete_alias
       complete -F _complete_alias "${!BASH_ALIASES[@]}"
+    elif [ -f ~/dot-files/lib/complete_alias ]; then
+      . ~/dot-files/lib/complete_alias
+      complete -F _complete_alias "${!BASH_ALIASES[@]}"
    else
-      echo "Install package: bash-complete-alias"
+      echo "Install package: complete-alias (see https://github.com/cykerway/complete-alias)"
    fi
 fi
 
