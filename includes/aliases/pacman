@@ -1,5 +1,5 @@
 # Install/uninstall
-alias pacman-install='sudo pacman -Syu'   # append package name
+alias pacman-install='sudo pacman -S'   # append package name
 alias pacman-uninstall='sudo pacman -Rsc' # append package name
 
 # What do I have?
@@ -14,7 +14,7 @@ alias pacman-search-info='pacman -Si'     # append package name
 
 # Update/upgrade
 alias pacman-update='sudo pacman -Syy'    # add --debug for issues
-alias pacman-upgrade='sudo -Sy archlinux-keyring && sudo pacman -Syu'   # add --debug for issues
+alias pacman-upgrade='sudo pacman -Syy && sudo -Sy archlinux-keyring && sudo pacman -Syu'   # add --debug for issues
 
 # Cache
 alias pacman-clean-cache='sudo pacman -Sc'
