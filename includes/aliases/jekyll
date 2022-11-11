@@ -1,7 +1,0 @@
-if command -v bundle-2.7 > /dev/null 2>&1; then
-    alias js='bundle-2.7 exec jekyll serve'
-elif command -v bundle > /dev/null 2>&1; then
-    alias js='bundle exec jekyll serve'
-else
-    echo "Install package: bundle. Or update dot-files/includes/aliases/jekyll with bundle-* bin version"
-fi
