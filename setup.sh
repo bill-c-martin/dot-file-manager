@@ -19,33 +19,33 @@ for FILE in .[^.]*; do
         # Show warning for files about to get overwritten
         if [[ -f ~/$FILE ]]; then
             echo -e "\n  \e[33m~/${FILE} exists.\e[0m"
-            echo -e "  \e[33mConsider running: diff ~/${FILE} ~/dot-files/${FILE}\e[0m"
+            echo -e "  \e[33mConsider running: diff ~/${FILE} ~/dot-file-manager/${FILE}\e[0m"
             read -p "  Overwrite ~/${FILE}/? y/n: " yn
         fi
         
         # Show warning for directories about to get overwritten
         if [[ -d ~/$FILE ]]; then
             echo -e "\n  \e[33m~/${FILE}/ exists, and is a directory.\e[0m"
-            echo -e "  \e[33m~/Make sure file you wan to keep from ~/${FILE}/ is in ~/dot-files/${FILE}/ otherwise you are about to lose them!/\e[0m"
+            echo -e "  \e[33m~/Make sure settings you want to keep from ~/${FILE}/ is in ~/dot-file-manager/${FILE}/ otherwise you are about to lose them!/\e[0m"
             read -p "  Overwrite ~/${FILE}? y/n: " yn
         fi
 
         if [[ $yn == "y" ]]; then
-            rm -r ~/$FILE && ln -s ~/dot-files/$FILE ~/$FILE
-            echo -e "  \e[32mSymlinked: ~/${FILE} -> ~/dot-files/${FILE}\e[0m"
+            rm -r ~/$FILE && ln -s ~/dot-file-manager/$FILE ~/$FILE
+            echo -e "  \e[32mSymlinked: ~/${FILE} -> ~/dot-file-manager/${FILE}\e[0m"
         else
             echo -e "  \e[32mSkipping file...\e[0m"
         fi
     else
-        ln -s ~/dot-files/$FILE ~/$FILE
-        echo -e "  \e[32mSymlinked: ~/${FILE} -> ~/dot-files/${FILE}\e[0m"
+        ln -s ~/dot-file-manager/$FILE ~/$FILE
+        echo -e "  \e[32mSymlinked: ~/${FILE} -> ~/dot-file-manager/${FILE}\e[0m"
     fi
 done
 
 printf "\nIncluding dotfiles in your ~/.bashrc...\n"
 
 # if the below block is already in .bashrc
-if [[ $(cat ~/.bashrc | grep dot-files) ]]; then
+if [[ $(cat ~/.bashrc | grep dot-file-manager) ]]; then
     echo -e "\n  \e[32mYour aliases and bashrc customizations are already included in your ~/.bashrc.\e[0m"
     echo -e "  \e[32mNo action taken.\e[0m"
 
@@ -54,13 +54,13 @@ else
     cat >> ~/.bashrc <<'endmsg'
 
 # Load .bashrc customizations and aliases
-if [ -f ~/dot-files/includes/include ]; then
-   . ~/dot-files/includes/include
+if [ -f ~/dot-file-manager/includes/include ]; then
+   . ~/dot-file-manager/includes/include
 fi
 
 endmsg
 
-    echo -e "\n  \e[32mAdded include for ~/dot-files/includes/include in your ~/.bashrc.\e[0m"
+    echo -e "\n  \e[32mAdded include for ~/dot-file-manager/includes/include in your ~/.bashrc.\e[0m"
     echo -e "  \e[32mAliases and bash customizations loaded.\e[0m"
 fi 
 

@@ -1,6 +1,6 @@
 function a() { 
     local alias_file="$1"
-    local alias_path="$HOME/dot-files/includes/aliases"
+    local alias_path="$HOME/dot-file-manager/includes/aliases"
     
     if [[ -e "$alias_path"/"$alias_file" && -n "$alias_file" ]]
     then
@@ -10,6 +10,6 @@ function a() {
         printf "\nUsage: a <alias-group>\n\n"
         printf "Where <alias-group> is one of: \n\n"
         ls -1 $alias_path
-        printf "\nAlias groups defined in ~/dot-files/includes/aliases/\n\n"
+        printf "\nAlias groups defined in ~/dot-file-manager/includes/aliases/\n\n"
     fi
 }
