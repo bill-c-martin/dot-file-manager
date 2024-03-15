@@ -1,0 +1,2 @@
+alias ngn='ng new '
+alias ngs='ng serve --open '

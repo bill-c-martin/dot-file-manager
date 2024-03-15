@@ -129,3 +129,7 @@ if [ -f ~/dot-files/includes/include ]; then
    fi
 fi
 
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
