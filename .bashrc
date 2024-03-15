@@ -114,15 +114,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Load .bashrc customizations and aliases
-if [ -f ~/dot-file-manager/includes/include ]; then
-   . ~/dot-file-manager/includes/include
+if [ -f ~/dot-files/includes/include ]; then
+   . ~/dot-files/includes/include
 
    # Add bash completion for aliases
    if [ -f /usr/share/bash-complete-alias/complete_alias ]; then
       . /usr/share/bash-complete-alias/complete_alias
       complete -F _complete_alias "${!BASH_ALIASES[@]}"
-    elif [ -f ~/dot-file-manager/lib/complete_alias ]; then
-      . ~/dot-file-manager/lib/complete_alias
+    elif [ -f ~/dot-files/lib/complete_alias ]; then
+      . ~/dot-files/lib/complete_alias
       complete -F _complete_alias "${!BASH_ALIASES[@]}"
    else
       echo "Install package: complete-alias (see https://github.com/cykerway/complete-alias)"

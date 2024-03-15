@@ -1,4 +1,4 @@
-# dot-file-manager
+# dot-files
 
 Track and manage Linux dot-files, symlinks, and aliases across machines.
 
@@ -20,9 +20,9 @@ Ships with:
 
 ```bash
 cd ~
-git clone git@github.com:bill-c-martin/dot-file-manager.git
-chmod +x dot-file-manager/setup.sh
-./dot-file-manager/setup.sh
+git clone git@github.com:bill-c-martin/dot-files.git
+chmod +x dot-files/setup.sh
+./dot-files/setup.sh
 ```
 
 The setup script asks if it can point your `~` dot files to the versions in this repo (or any other files you add to this repo starting with a `.`):
@@ -95,10 +95,10 @@ a pacman
 Example output:
 
 ```bash
-Aliases in /home/bill/dot-file-manager/includes/aliases/pacman:
+Aliases in /home/bill/dot-files/includes/aliases/pacman:
 
 ───────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-       │ File: /home/bill/dot-file-manager/includes/aliases/pacman
+       │ File: /home/bill/dot-files/includes/aliases/pacman
 ───────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
    1   │ # Install/uninstall
    2   │ alias pacman-install='sudo pacman -Syu'   # append package name
@@ -128,8 +128,8 @@ To track a new dot file, add it to the root of this repo, then run `setup.sh` wh
 ### Example: Move `.gitconfig` to be Tracked in This Repo
 
 ```bash
-cp ~/.vimrc ~/dot-file-manager/.gitconfig
-cd ~ && ./dot-file-manager/setup.sh
+cp ~/.vimrc ~/dot-files/.gitconfig
+cd ~ && ./dot-files/setup.sh
 ```
 
 Output:
@@ -137,7 +137,7 @@ Output:
 ```bash
 # Setting up dot file symlinks..
 
-Symlinked: ~/.gitconfig -> ~/dot-file-manager/.gitconfig
+Symlinked: ~/.gitconfig -> ~/dot-files/.gitconfig
 
 # Next Steps: 
 
@@ -150,8 +150,8 @@ Symlinked: ~/.gitconfig -> ~/dot-file-manager/.gitconfig
 Where `~/.vimrc` does not yet exist.
 
 ```bash
-echo "set tabstop=4 shiftwidth=4 expandtab" > ~/dot-file-manager/.vimrc
-cd ~ && ./dot-file-manager/setup.sh
+echo "set tabstop=4 shiftwidth=4 expandtab" > ~/dot-files/.vimrc
+cd ~ && ./dot-files/setup.sh
 ```
 
 Output:
@@ -159,7 +159,7 @@ Output:
 ```bash
 # Setting up dot file symlinks..
 
-Symlinked: ~/.vimrc -> ~/dot-file-manager/.vimrc
+Symlinked: ~/.vimrc -> ~/dot-files/.vimrc
 
 # Next Steps: 
 
